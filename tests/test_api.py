@@ -298,14 +298,21 @@ class TestPutRequests:
         assert result is None
 
     @pytest.mark.asyncio
+    async def test_set_pump_3(self):
+        """async_set_pump with pump_id 3 returns None."""
+        client = ArcticSpaClient("test_key", session=_make_session(_make_response()))
+        result = await client.async_set_pump(3, PumpState.HIGH)
+        assert result is None
+
+    @pytest.mark.asyncio
     async def test_set_pump_invalid_id_raises_value_error(self):
-        """pump_id outside {1, 2} raises ValueError immediately (no network call)."""
+        """pump_id outside {1, 2, 3} raises ValueError immediately (no network call)."""
         session = _make_session(_make_response())
         client = ArcticSpaClient("test_key", session=session)
         with pytest.raises(ValueError, match="Invalid pump_id"):
             await client.async_set_pump(0, PumpState.HIGH)
         with pytest.raises(ValueError, match="Invalid pump_id"):
-            await client.async_set_pump(3, PumpState.LOW)
+            await client.async_set_pump(4, PumpState.LOW)
         # Confirm no PUT was issued
         session.put.assert_not_called()
 

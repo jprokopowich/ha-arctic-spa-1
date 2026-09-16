@@ -38,7 +38,7 @@ class ArcticSpaTemperature(ArcticSpaEntity, NumberEntity):
     """Number entity for spa temperature setpoint."""
 
     _attr_icon = "mdi:thermometer"
-    _attr_native_min_value = 80
+    _attr_native_min_value = 59
     _attr_native_max_value = 104
     _attr_native_step = 1
     _attr_native_unit_of_measurement = UnitOfTemperature.FAHRENHEIT

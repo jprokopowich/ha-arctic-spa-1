@@ -29,6 +29,7 @@ async def async_setup_entry(
             ArcticSpaLightSwitch(coordinator, entry.entry_id),
             ArcticSpaPumpSwitch(coordinator, entry.entry_id, 1, "Pump 1 Jets", PumpState.HIGH),
             ArcticSpaPumpSwitch(coordinator, entry.entry_id, 2, "Pump 2 Jets", PumpState.HIGH),
+            ArcticSpaPumpSwitch(coordinator, entry.entry_id, 3, "Pump 3 Jets", PumpState.HIGH),
             ArcticSpaBoostSwitch(coordinator, entry.entry_id),
         ]
     )

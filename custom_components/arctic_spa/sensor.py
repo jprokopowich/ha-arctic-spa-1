@@ -139,6 +139,17 @@ SENSORS = [
         None,
     ),
     (
+        "pump3_state",
+        "Pump 3 State",
+        "pump3",
+        None,
+        None,
+        None,
+        "mdi:pump",
+        None,
+        None,
+    ),
+    (
         "errors",
         "Errors",
         "errors",
